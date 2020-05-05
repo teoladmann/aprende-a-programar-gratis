@@ -6,7 +6,7 @@ const Navigation = () => {
     <nav className="nav-container">
       <div className="brand">
         <Link to="/">
-          <span className="text"><span className="emoji" role="img" aria-label="Computadora">💻</span>Aprende a Programar Gratis</span>
+          <span className="text"><span className="emoji" role="img" aria-label="Computadora">💻</span>Programatis</span>
         </Link>
       </div>
       <div className="links">

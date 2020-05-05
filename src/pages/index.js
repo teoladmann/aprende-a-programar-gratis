@@ -11,8 +11,8 @@ const Home = ({ data }) => {
   return (
     <Layout>
       <div className="welcome">
-          <h1 className="">Hola <span role="img" aria-label="Greet Emoji">👋</span></h1>
-          <p className="big-text">Comienza ahora <span role="img" aria-label="Down Arrow Emoji">⬇️</span></p>
+          <p className="title1-not-heading">Hola <span role="img" aria-label="Emoji Saludo">👋</span></p>
+          <h1 className="big-text">Aprende a programar gratis <span role="img" aria-label="Flecha Abajo">⬇️</span></h1>
       </div>
       <Section>
         {data.allMarkdownRemark.edges.map((edge, key) => (

@@ -27,7 +27,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.title1-not-heading {
   margin: 0 0 1rem 0;
   font-weight: $heading-font-weight;
   font-family: $heading-font-family;
@@ -77,6 +78,11 @@ a {
 
 .big-text {
   font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
   line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.title1-not-heading {
+  font-size: $h1-size;
 }
