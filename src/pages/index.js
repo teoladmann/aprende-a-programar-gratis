@@ -6,7 +6,6 @@ import Section from "../components/Section";
 import Article from "../components/Article";
 
 const Home = ({ data }) => {
-  console.log(data);
 
   return (
     <Layout>
