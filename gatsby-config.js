@@ -1,8 +1,16 @@
+const config = require('./data/SiteConfig');
+
 module.exports = {
   plugins: [
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalyticsID,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -1,9 +1,11 @@
 const config = {
-  siteTitle: 'Aprende a Programar Gratis',
-  siteTitleShort: 'Aprende Programación',
-  siteTitleAlt: 'Aprende a Programar Gratis',
-  siteUrl: 'https://www.aprendeaprogramargratis.com',
-  siteDescription: 'Aprende a programar de forma gratuita sin salir de tu casa.'
-}
+  siteTitle: 'Aprende a Programar Gratis | Programatis',
+  siteTitleShort: 'Programatis',
+  siteTitleAlt: 'Programatis',
+  siteUrl: 'https://www.programatis.com',
+  siteDescription:
+    'Aprende a programar de forma gratuita y en español sin salir de tu casa.',
+  googleAnalyticsID: 'UA-24254843-2',
+};
 
 module.exports = config;
