@@ -17,16 +17,15 @@ const Home = ({ data }) => {
       <Layout>
         <div className="welcome">
           <h1>
-            Hola{' '}
+            Bienvenidos{' '}
             <span role="img" aria-label="Emoji Saludo">
               👋
             </span>
           </h1>
           <h2 className="subheading">
-            Aprende a programar gratis{' '}
-            <span role="img" aria-label="Flecha Abajo">
-              ⬇️
-            </span>
+            Programatis es una plataforma creada para que cualquier persona
+            pueda aprender programación web de forma <strong>gratuita</strong> y
+            en <strong>español</strong>.
           </h2>
         </div>
         <Section>

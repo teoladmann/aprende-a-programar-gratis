@@ -6,18 +6,21 @@ const Navigation = () => {
     <nav className="nav-container">
       <div className="brand">
         <Link to="/">
-          <span className="text"><span className="emoji" role="img" aria-label="Computadora">💻</span>Programatis</span>
+          <span className="text">
+            <span className="emoji" role="img" aria-label="Computadora">
+              💻
+            </span>
+            Programatis
+          </span>
         </Link>
       </div>
       <div className="links">
         <Link to="/acerca">
-          <span>
-            Acerca
-          </span>
+          <span>Acerca</span>
         </Link>
       </div>
-   </nav>
-  )
-}
+    </nav>
+  );
+};
 
 export default Navigation;

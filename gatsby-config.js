@@ -9,7 +9,7 @@ module.exports = {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'es',
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
