@@ -8,6 +8,6 @@ Programatis es un sitio en español completamente gratuito en el que se puede ap
 
 - [Timoteo Ladmann](https://github.com/teoladmann/)
 
-## License
+## Licencia
 
 Este proyecto es _open source_ y disponible bajo la licencia [MIT](LICENSE).
