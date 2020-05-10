@@ -108,3 +108,62 @@ a {
 .title1-not-heading {
   font-size: $h1-size;
 }
+
+// Buttons
+
+%buttons {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: $button-border-width $button-border-style $button-border-color;
+  border-radius: $button-border-radius;
+  background: $button-background;
+  color: $button-color;
+  font-weight: $button-font-weight;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 0 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+// Buttons on hover & focus
+
+%buttons-hover-focus {
+  border: $button-border-width $button-border-style $button-background-hover;
+  color: white;
+  background: $button-background-hover;
+  text-decoration: none;
+}
+
+// Apply styles to .button class, button element, and button-based inputs
+#{$buttons} {
+  @extend %buttons;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:hover {
+    @extend %buttons-hover-focus;
+  }
+
+  &:focus,
+  &:active {
+    @extend %buttons-hover-focus;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

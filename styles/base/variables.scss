@@ -78,3 +78,21 @@ $border-color: #ccc;
 $border-radius: 6px;
 $borders: $border-width $border-style $border-color;
 $box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+
+// Buttons
+
+$buttons: ('.button, a.button, button, [type=submit], [type=button]');
+
+$primary-hover: lighten($green, 33%);
+$button-background: $green;
+$button-background-hover: darken($green, 15%);
+$button-color: white;
+$button-font-weight: 500;
+$button-font-family: Helvetica Neue, 'Inter', -apple-system, BlinkMacSystemFont,
+  Helvetica, Arial, sans-serif;
+$button-font-size: 1.1rem;
+$button-border-width: 2px;
+$button-border-style: solid;
+$button-border-color: $green;
+$button-border-radius: $border-radius;
+$button-text-transform: none;
