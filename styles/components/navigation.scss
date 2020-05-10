@@ -64,6 +64,19 @@
   }
 }
 
+.dark-theme {
+  .nav-container {
+    .links a {
+      color: $text-dark;
+
+      &:hover,
+      &.active {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
 @include small-breakpoint {
   .nav-container {
     padding: $padding-bigger;

@@ -21,6 +21,12 @@ ul li p {
   margin: 0;
 }
 
+// Dark Theme
+
+body.dark-theme {
+  background: $background-dark;
+}
+
 // Mobile First
 
 // Headings
@@ -38,6 +44,19 @@ h5,
   color: $heading-font-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings Dark
+
+.dark-theme {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .title1-not-heading {
+    color: $heading-dark;
+  }
 }
 
 // Headings Individual
@@ -90,6 +109,19 @@ a {
   }
 }
 
+// Links Dark
+.dark-theme {
+  a {
+    color: $text-dark;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: white;
+    }
+  }
+}
+
 // Text
 
 .text {
@@ -107,6 +139,15 @@ a {
 
 .title1-not-heading {
   font-size: $h1-size;
+}
+
+// Text Dark
+
+.dark-theme {
+  .subheading,
+  .text {
+    color: $text-dark;
+  }
 }
 
 // Buttons

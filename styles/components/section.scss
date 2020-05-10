@@ -14,3 +14,11 @@
     }
   }
 }
+
+.dark-theme {
+  .section {
+    a {
+      border-bottom-color: darken($background-dark, 5%);
+    }
+  }
+}

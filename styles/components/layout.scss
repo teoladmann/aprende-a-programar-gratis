@@ -6,13 +6,27 @@
   padding: $padding;
 
   a {
-    border-radius: 4px;
     &:hover {
       background: $link-hover-background;
+      border-radius: 4px;
     }
     &:active,
     &:focus {
       background: darken($link-hover-background, 10%);
+    }
+  }
+}
+
+.dark-theme {
+  .container {
+    a {
+      &:hover {
+        background: rgba(182, 182, 182, 0.2);
+      }
+      &:active,
+      &:focus {
+        background: darken($link-hover-background-dark, 10%);
+      }
     }
   }
 }
