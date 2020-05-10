@@ -2,7 +2,7 @@ const config = require('./src/data/SiteConfig');
 
 module.exports = {
   plugins: [
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
