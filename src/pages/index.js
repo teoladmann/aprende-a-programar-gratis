@@ -23,16 +23,27 @@ const Home = ({ data }) => {
             </span>
           </h1>
           <h2 className="subheading">
-            Programatis es una plataforma creada para que cualquier persona
-            pueda aprender programación web de forma <strong>gratuita</strong> y
-            en <strong>español</strong>.
+            Programatis brinda una introducción a la programación web de forma{' '}
+            <strong>gratuita</strong> y en <strong>español</strong>.
           </h2>
+          <h3 className="subheading">
+            <span role="img" aria-label="Emoji Construcción">
+              🚧{' '}
+            </span>
+            <strong>Sitio en construcción</strong>
+            <span role="img" aria-label="Emoji Construcción">
+              {' '}
+              🚧
+            </span>
+          </h3>
         </div>
-        <Section>
-          {data.allMarkdownRemark.edges.map((edge, key) => (
-            <Article key={key} edge={edge} />
-          ))}
-        </Section>
+        {data.allMarkdownRemark.group.map((group, key) => (
+          <Section key={key} title={group.fieldValue}>
+            {group.edges.map((edge, key) => (
+              <Article key={key} edge={edge} />
+            ))}
+          </Section>
+        ))}
       </Layout>
     </>
   );
@@ -40,15 +51,19 @@ const Home = ({ data }) => {
 
 export const pageQuery = graphql`
   query queryHome {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            author
-          }
-          fields {
-            slug
+    allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
+      group(field: frontmatter___category) {
+        fieldValue
+        edges {
+          node {
+            frontmatter {
+              title
+              author
+              order
+            }
+            fields {
+              slug
+            }
           }
         }
       }

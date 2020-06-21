@@ -1,0 +1,22 @@
+.nav-prev-next {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  .prev {
+    text-align: left;
+    padding: 5px 0;
+  }
+  .next {
+    padding: 5px 0;
+    text-align: right;
+  }
+}
+
+@include small-breakpoint {
+  .nav-prev-next {
+    flex-direction: row;
+  }
+}

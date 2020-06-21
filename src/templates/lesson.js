@@ -1,13 +1,46 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Layout from '../layout';
 
-const Lesson = ({ data }) => {
+const Lesson = ({ data, pageContext }) => {
+  const { previous, next } = pageContext;
+
   return (
     <Layout>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+      <div
+        style={{ marginBottom: '30px' }}
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      ></div>
+      <nav className="nav-prev-next">
+        <span className="prev">
+          {previous && (
+            <Link
+              to={`clase/${previous.fields.slug}`}
+              rel="prev"
+              style={{
+                padding: '10px',
+              }}
+            >
+              ← {previous.frontmatter.title}
+            </Link>
+          )}
+        </span>
+        <span className="next">
+          {next && (
+            <Link
+              to={`clase/${next.fields.slug}`}
+              rel="next"
+              style={{
+                padding: '10px',
+              }}
+            >
+              {next.frontmatter.title} →
+            </Link>
+          )}
+        </span>
+      </nav>
     </Layout>
   );
 };

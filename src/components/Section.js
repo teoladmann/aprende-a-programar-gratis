@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Section = ({ children }) => {
+const Section = ({ title, children }) => {
   return (
     <section className="section">
       <h2>
         <span role="img" aria-label="Emoji Papel">
           📝{' '}
         </span>
-        Introducción
+        {title}
       </h2>
       {children}
     </section>
