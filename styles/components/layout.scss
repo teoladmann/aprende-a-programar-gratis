@@ -6,7 +6,8 @@
   margin-bottom: 50px;
   padding: $padding;
 
-  a {
+  a,
+  .index-element {
     &:hover {
       background: $link-hover-background;
       border-radius: 4px;
@@ -16,11 +17,30 @@
       background: darken($link-hover-background, 10%);
     }
   }
+  ol {
+    .index-element:first-child {
+      padding-bottom: 10px;
+    }
+    .index-element {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: 0px;
+      &:before {
+        content: '';
+      }
+    }
+    .index-element:last-child {
+      padding-top: 10px;
+    }
+  }
 }
 
 .dark-theme {
   .container {
-    a {
+    a,
+    .index-element {
       &:hover {
         background: rgba(182, 182, 182, 0.2);
       }
@@ -35,5 +55,13 @@
 @include small-breakpoint {
   .container {
     padding: $padding-bigger;
+    ol {
+      .index-element {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
   }
 }

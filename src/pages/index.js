@@ -5,7 +5,6 @@ import { graphql } from 'gatsby';
 import config from '../data/SiteConfig';
 
 import Layout from '../layout';
-import Section from '../components/Section';
 import Article from '../components/Article';
 
 const Home = ({ data }) => {
@@ -17,33 +16,35 @@ const Home = ({ data }) => {
       <Layout>
         <div className="welcome">
           <h1>
-            Bienvenidos{' '}
+            Bienvenido{' '}
             <span role="img" aria-label="Emoji Saludo">
               👋
             </span>
           </h1>
           <h2 className="subheading">
-            Programatis brinda una introducción a la programación web de forma{' '}
-            <strong>gratuita</strong> y en <strong>español</strong>.
+            Programatis es un sitio creado para que puedas aprender programación
+            web de forma <strong>gratuita</strong> y en <strong>español</strong>
+            .
           </h2>
           <h3 className="subheading">
             <span role="img" aria-label="Emoji Construcción">
               🚧{' '}
             </span>
-            <strong>Sitio en construcción</strong>
+            <strong>En construcción</strong>
             <span role="img" aria-label="Emoji Construcción">
               {' '}
               🚧
             </span>
           </h3>
         </div>
-        {data.allMarkdownRemark.group.map((group, key) => (
-          <Section key={key} title={group.fieldValue}>
-            {group.edges.map((edge, key) => (
+        <div>
+          <h2>Contenido</h2>
+          <ol>
+            {data.allMarkdownRemark.edges.map((edge, key) => (
               <Article key={key} edge={edge} />
             ))}
-          </Section>
-        ))}
+          </ol>
+        </div>
       </Layout>
     </>
   );
@@ -52,18 +53,15 @@ const Home = ({ data }) => {
 export const pageQuery = graphql`
   query queryHome {
     allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
-      group(field: frontmatter___category) {
-        fieldValue
-        edges {
-          node {
-            frontmatter {
-              title
-              author
-              order
-            }
-            fields {
-              slug
-            }
+      edges {
+        node {
+          frontmatter {
+            title
+            author
+            order
+          }
+          fields {
+            slug
           }
         }
       }
