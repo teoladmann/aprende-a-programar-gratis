@@ -19,18 +19,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const res = await graphql(`
     query {
       allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
-        group(field: frontmatter___category) {
-          fieldValue
-          edges {
-            node {
-              frontmatter {
-                title
-                author
-                order
-              }
-              fields {
-                slug
-              }
+        edges {
+          node {
+            frontmatter {
+              title
+              author
+              order
+            }
+            fields {
+              slug
             }
           }
         }
@@ -38,21 +35,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  res.data.allMarkdownRemark.group.forEach(group => {
-    group.edges.forEach((edge, index) => {
-      const previous = index === 0 ? null : group.edges[index - 1].node;
-      const next =
-        index === group.edges.length - 1 ? null : group.edges[index + 1].node;
+  const edges = res.data.allMarkdownRemark.edges;
+  edges.forEach((edge, index) => {
+    const previous = index === 0 ? null : edges[index - 1].node;
+    const next = index === edges.length - 1 ? null : edges[index + 1].node;
 
-      createPage({
-        component: lessonTemplate,
-        path: `/clase/${edge.node.fields.slug}`,
-        context: {
-          slug: edge.node.fields.slug,
-          previous,
-          next,
-        },
-      });
+    createPage({
+      component: lessonTemplate,
+      path: `/clase/${edge.node.fields.slug}`,
+      context: {
+        slug: edge.node.fields.slug,
+        previous,
+        next,
+      },
     });
   });
 };
