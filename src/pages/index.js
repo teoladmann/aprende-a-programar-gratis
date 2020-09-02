@@ -37,14 +37,14 @@ const Home = ({ data }) => {
             </span>
           </h3>
         </div>
-        <div>
+        {/* <div>
           <h2>Contenido</h2>
           <ol>
             {data.allMarkdownRemark.edges.map((edge, key) => (
               <Article key={key} edge={edge} />
             ))}
           </ol>
-        </div>
+        </div> */}
       </Layout>
     </>
   );
